@@ -3,14 +3,9 @@ package com.malak.users;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-
-import com.malak.users.entities.Role;
-import com.malak.users.entities.User;
 import com.malak.users.service.UserService;
 
-import jakarta.annotation.PostConstruct;
+
 
 @SpringBootApplication
 public class UsersMicroserviceApplication {
@@ -31,7 +26,7 @@ public class UsersMicroserviceApplication {
 		//ajouter les users
 		userService.saveUser(new User(null,"admin","123",true,null));
 		userService.saveUser(new User(null,"nadhem","123",true,null));
-		userService.saveUser(new User(null,"yassine","123",true,null));
+		userService.saveUser(new User(null,"malak","123",true,null));
 		//ajouter les rôles aux users
 		userService.addRoleToUser("admin", "ADMIN");
 		userService.addRoleToUser("admin", "USER");

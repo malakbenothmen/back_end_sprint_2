@@ -1,5 +1,7 @@
 package com.malak.users.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -49,6 +51,10 @@ public class UserServiceImpl implements UserService {
 	public User findUserByUsername(String username) {
 		return userRep.findByUsername(username);
 	}
+	
+	@Override
+	public List<User> findAllUsers()
+	{return userRep.findAll();}
 
 
 }
